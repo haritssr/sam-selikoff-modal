@@ -14,13 +14,30 @@ interface IndividualContact {
 export default function Page() {
   let { contacts } = useContacts();
   return (
-    <div className="p-5">
-      <div className="mx-auto max-w-sm space-y-4 rounded-lg bg-gray-300 p-4">
-        {contacts.map((contact: IndividualContact) => (
-          <ContactCard key={contact.id} contact={contact} />
-        ))}
+    <header>
+      <div className="flex items-center justify-between bg-white text-zinc-800 p-4">
+        <div className="">Wah</div>
+        <Modal>
+          <Modal.Button asChild>
+            <button>Button</button>
+          </Modal.Button>
+          <Modal.Content title="About Wah">
+            <ol>
+              <li>im a list</li>
+              <li>im a list</li>
+              <li>im a list</li>
+            </ol>
+          </Modal.Content>
+        </Modal>
       </div>
-    </div>
+      <div className="p-5">
+        <div className="mx-auto max-w-sm space-y-4 rounded-lg bg-gray-300 p-4">
+          {contacts.map((contact: IndividualContact) => (
+            <ContactCard key={contact.id} contact={contact} />
+          ))}
+        </div>
+      </div>
+    </header>
   );
 }
 
